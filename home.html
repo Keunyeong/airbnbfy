@@ -36,15 +36,15 @@
             const afterArray = [];
             beforArray.forEach((char)=>{
                 const uni = Number(char.charCodeAt(0));
-                
-                if(uni!=32 && uni!=46){
-                    afterArray.push(String.fromCharCode(uni+3));
+                console.log(uni);
+                //32는 공백, 46은 .
+                if(uni!=32 && uni!=46 && uni!=39 && uni!=34 && uni!=45 && uni!=40 && uni!=41 && uni!=33 && uni!=63 && uni!=44 && uni!=47 && uni!=92 && uni!=58 && uni!=59){
+                    afterArray.push(String.fromCharCode(uni+2));
                 } else {
                     afterArray.push(String.fromCharCode(uni));
                 }
             })
             after.value = afterArray.join("");
-            //46, 32 제외
         })
 
     </script>
