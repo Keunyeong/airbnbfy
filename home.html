@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <title>Airbnbfy</title>
+</head>
+<body>
+    <h1>한국인만 읽을 수 있는 에어비엔비체 변환기</h1>
+    <textarea name="before" id="before" cols="30" rows="10"></textarea>
+    <br>
+    <button id="convertBtn">변환하기</button>
+    <br>
+    <textarea name="after" id="after" cols="30" rows="10"></textarea>
+    <script>
+        const before = document.querySelector("#before");
+        const after = document .querySelector("#after");
+
+        document.querySelector("#convertBtn").addEventListener("click",function(){
+            after.value = before.value;
+        })
+
+    </script>
+</body>
+</html>
