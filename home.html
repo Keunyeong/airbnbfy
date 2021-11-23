@@ -3,20 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Airbnbfy</title>
+    <style>
+        h1 {
+            display : flex;
+            justify-content: center;
+        }
+
+        div {
+            display : flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>한국인만 읽을 수 있는 에어비엔비체 변환기</h1>
-    <textarea name="before" id="before" cols="30" rows="10"></textarea>
-    <br>
-    <button id="convertBtn">변환하기</button>
-    <br>
-    <textarea name="after" id="after" cols="30" rows="10"></textarea>
+    <h1>한글 난독화</h1>
+    <div>
+        <textarea name="before" id="before" cols="30" rows="10"></textarea>
+        <br>
+        <button id="convertBtn">변환하기</button>
+        <br>
+        <textarea name="after" id="after" cols="30" rows="10"></textarea>
+    </div>
+    
     <script>
         const before = document.querySelector("#before");
         const after = document .querySelector("#after");
 
         document.querySelector("#convertBtn").addEventListener("click",function(){
-            after.value = before.value;
+            const beforArray = (before.value).split("");
+            const afterArray = [];
+            beforArray.forEach((char)=>{
+                const uni = Number(char.charCodeAt(0));
+                
+                if(uni!=32 && uni!=46){
+                    afterArray.push(String.fromCharCode(uni+3));
+                } else {
+                    afterArray.push(String.fromCharCode(uni));
+                }
+            })
+            after.value = afterArray.join("");
+            //46, 32 제외
         })
 
     </script>
