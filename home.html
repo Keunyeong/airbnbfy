@@ -34,12 +34,10 @@
         document.querySelector("#convertBtn").addEventListener("click",function(){
             const beforArray = (before.value).split("");
             const afterArray = [];
-            let ranNum = (Math.random()*2+1);
-            let convertNum = Math.floor(ranNum);
-            console.log(convertNum);
             beforArray.forEach((char)=>{
                 const uni = Number(char.charCodeAt(0));
-                console.log(uni);
+                let ranNum = (Math.random()*3);
+                let convertNum = Math.floor(ranNum);
                 //32는 공백, 46은 .
                 if(uni!=32 && uni!=46 && uni!=39 && uni!=34 && uni!=45 && uni!=40 && uni!=41 && uni!=33 && uni!=63 && uni!=44 && uni!=47 && uni!=92 && uni!=58 && uni!=59){
                     afterArray.push(String.fromCharCode(uni+convertNum));
