@@ -15,15 +15,47 @@
             justify-content: center;
         }
 
+        #btnBox {
+            padding : 20px;
+            display : flex;
+            justify-content: center;
+        }
+
+        #btnBox div {
+            padding-top : 20px;
+        }
+
+        #convertBtn {
+            background-color: cadetblue;
+            color : whitesmoke;
+        }
+        
+        #delBtn {
+            background-color: firebrick;
+            color : whitesmoke;
+        }
+
+        #convertBtn, #delBtn {
+            padding : 10px;
+            border-radius: 10px;
+            border : 0;
+        }
+
+    
     </style>
 </head>
 <body>
     <h1>한글 난독화</h1>
     <div>
         <textarea name="before" id="before" cols="30" rows="10"></textarea>
-        <br>
-        <button id="convertBtn">변환하기</button>
-        <br>
+        
+        <div id="btnBox">
+            <button id="convertBtn">변환하기</button>
+            <div>
+                <button id="delBtn">내용지우기</button>
+            </div>
+        </div>
+        
         <textarea name="after" id="after" cols="30" rows="10"></textarea>
     </div>
     
