@@ -4,27 +4,14 @@
     <meta charset="UTF-8">
     <title>Airbnbfy</title>
     <style>
+        body {
+            display : flex;
+            justify-content: center;
+        }
         h1 {
-            display : flex;
-            justify-content: center;
+            text-align: center;
         }
-
-        div {
-            display : flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        #btnBox {
-            padding : 20px;
-            display : flex;
-            justify-content: center;
-        }
-
-        #btnBox div {
-            padding-top : 20px;
-        }
-
+        
         #convertBtn {
             background-color: cadetblue;
             color : whitesmoke;
@@ -35,35 +22,40 @@
             color : whitesmoke;
         }
 
+        textarea {
+            display: block;
+        }
         #convertBtn, #delBtn {
+            display : block;
             padding : 10px;
+            margin: 10px;
             border-radius: 10px;
             border : 0;
+            box-shadow: 2px 2px 2px black;
+            width: 100px;
         }
 
     
     </style>
 </head>
 <body>
-    <h1>한글 난독화</h1>
-    <div>
+    
+    <div class="contents">
+        <h1>한글 난독화</h1>
         <textarea name="before" id="before" cols="30" rows="10"></textarea>
         
-        <div id="btnBox">
-            <button id="convertBtn">변환하기</button>
-            <div>
-                <button id="delBtn">내용지우기</button>
-            </div>
-        </div>
+        <button id="convertBtn" onclick="convert()">변환하기</button>
+        <button id="delBtn" onclick="del()">내용지우기</button>
         
         <textarea name="after" id="after" cols="30" rows="10"></textarea>
+        
     </div>
     
     <script>
         const before = document.querySelector("#before");
         const after = document .querySelector("#after");
 
-        document.querySelector("#convertBtn").addEventListener("click",function(){
+        function convert(){
             const beforArray = (before.value).split("");
             const afterArray = [];
             beforArray.forEach((char)=>{
@@ -78,8 +70,7 @@
                 }
             })
             after.value = afterArray.join("");
-        })
-
+        }
     </script>
 </body>
 </html>
