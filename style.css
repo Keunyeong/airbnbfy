@@ -1,0 +1,30 @@
+body {
+  display : flex;
+  justify-content: center;
+}
+h1 {
+  text-align: center;
+}
+
+#convertBtn {
+  background-color: cadetblue;
+  color : whitesmoke;
+}
+
+#delBtn {
+  background-color: firebrick;
+  color : whitesmoke;
+}
+
+textarea {
+  display: block;
+}
+#convertBtn, #delBtn {
+  display : block;
+  padding : 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border : 0;
+  box-shadow: 2px 2px 2px black;
+  width: 100px;
+}
